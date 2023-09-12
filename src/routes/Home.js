@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-function Home() {
+function Home(props) {
+  console.log(props);
   const [text, setText] = useState("");
+  const todo = useSelector((state) => state);
   function onChange(e) {
     setText(e.target.value);
   }
@@ -20,4 +23,5 @@ function Home() {
     </>
   );
 }
+
 export default Home;
